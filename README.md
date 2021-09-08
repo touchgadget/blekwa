@@ -24,5 +24,5 @@ manager.
 ## Hardware
 
 Any ESP32 board with Bluetooth Low Energy (BLE) should work. As of this
-writing, the only ESP32 chip without BLE is the ESP32 S2.
-
+writing, the only ESP32 chip without BLE is the ESP32 S2. The ESP32 C3 has
+BLE but is too new to be sure how well it works.

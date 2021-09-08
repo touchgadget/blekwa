@@ -137,7 +137,6 @@ let gridData = [
 
 function touch_start(event) {
     event.preventDefault();
-    console.log('touch_start', this.id, this.innerHTML, event);
     e = document.getElementById(this.id);
     e.style.backgroundColor = "yellow";
     var json = JSON.stringify({event:'touch start', name:this.innerHTML, row:this.row, col:this.col});
@@ -153,14 +152,12 @@ function touch_start(event) {
 }
 function touch_end(event) {
     event.preventDefault();
-    console.log('touch_end', this.id, this.innerHTML, event);
     e = document.getElementById(this.id);
     e.style.backgroundColor = "white";
     websock.send(JSON.stringify({event:'touch end', name:this.innerHTML, id:this.id, row:this.row, col:this.col}));
 }
 function touch_move(event) {
     event.preventDefault();
-    console.log('touch_move', this.id, this.innerHTML, event);
     var json = JSON.stringify({event:'touch move', name:this.innerHTML, row:this.row, col:this.col});
     if (!connected) {
         setTimeout(function(json) {
@@ -174,7 +171,6 @@ function touch_move(event) {
 }
 function touch_cancel(event) {
     event.preventDefault();
-    console.log('touch_cancel', this.id, this.innerHTML, event);
     document.getElementById(this.id).style.backgroundColor = "white";
     websock.send(JSON.stringify({event:'touch cancel', name:this.innerHTML, id:this.id, row:this.row, col:this.col}));
 }
